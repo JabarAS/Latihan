@@ -1,0 +1,24 @@
+{
+  "name": "template-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 10000 --reporter mochawesome",
+    "test:regression": "mocha --timeout 10000 --reporter mochawesome runner/regression.js",
+    "test:browser": "live-server --port=9000 --mount=/:public"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "chai-json-schema": "^1.5.1",
+    "faker": "^5.5.3",
+    "mocha": "^10.0.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.1.0",
+    "mochawesome": "^7.1.3"
+  }
+}
