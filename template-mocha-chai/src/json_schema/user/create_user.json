@@ -1,5 +1,5 @@
 {
-    "full" : {
+    "full": {
         "$schema": "http://json-schema.org/draft-06/schema#",
         "$ref": "#/definitions/Welcome8",
         "definitions": {
@@ -31,9 +31,8 @@
                 "title": "Welcome8"
             }
         }
-    }
-    ,
-    "name_only" : {
+    },
+    "name_only": {
         "$schema": "http://json-schema.org/draft-06/schema#",
         "$ref": "#/definitions/Welcome7",
         "definitions": {
@@ -61,9 +60,8 @@
                 "title": "Welcome7"
             }
         }
-    }
-    ,
-    "job_only" : {
+    },
+    "job_only": {
         "$schema": "http://json-schema.org/draft-06/schema#",
         "$ref": "#/definitions/Welcome5",
         "definitions": {
@@ -92,5 +90,5 @@
             }
         }
     }
-    
+
 }

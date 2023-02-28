@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
 const chai = require('chai')
-const data = require('../../src/json_schema/auth/register.json')
+const data = require('../../src/json_schema/book_store/create_akun.json')
 const expect = require('chai').expect
 chai.use(require('chai-http'))
 chai.use(require('chai-json-schema'))
@@ -10,7 +10,7 @@ module.exports = function() {
     describe('Create Account', () => {
 
         it('success user input username dan format password ', (done) => {
-            let api = chai.request('https://bookstore.toolsqa.com/Account/v1/User');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({
@@ -25,7 +25,7 @@ module.exports = function() {
         })
 
         it('input invalid password', (done) => {
-            let api = chai.request('https://bookstore.toolsqa.com/Account/v1/User');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({
@@ -40,7 +40,7 @@ module.exports = function() {
         })
 
         it('blank username', (done) => {
-            let api = chai.request('https://bookstore.toolsqa.com/Account/v1/User');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({
@@ -54,7 +54,7 @@ module.exports = function() {
         })
 
         it('blank password', (done) => {
-            let api = chai.request('https://bookstore.toolsqa.com/Account/v1/User');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({

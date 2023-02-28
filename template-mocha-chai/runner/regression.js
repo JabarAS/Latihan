@@ -1,2 +1,3 @@
 require('./dev/user.js')()
-require('./dev/register.js')()
+require('./dev/auth.js')()
+require('./dev/book_store.js')()

@@ -1,0 +1,32 @@
+{
+    "succsess": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome10",
+        "definitions": {
+            "Welcome10": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "userID": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "username": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "books": {
+                        "type": "array",
+                        "items": {}
+                    }
+                },
+                "required": [
+                    "books",
+                    "userID",
+                    "username"
+                ],
+                "title": "Welcome10"
+            }
+        }
+    }
+}
