@@ -1,9 +1,9 @@
 {
-    "succsess": {
+    "success": {
         "$schema": "http://json-schema.org/draft-06/schema#",
-        "$ref": "#/definitions/Welcome10",
+        "$ref": "#/definitions/Welcome2",
         "definitions": {
-            "Welcome10": {
+            "Welcome2": {
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
@@ -12,8 +12,7 @@
                         "format": "uuid"
                     },
                     "username": {
-                        "type": "string",
-                        "format": "integer"
+                        "type": "string"
                     },
                     "books": {
                         "type": "array",
@@ -25,8 +24,82 @@
                     "userID",
                     "username"
                 ],
-                "title": "Welcome10"
+                "title": "Welcome2"
+            }
+        }
+    },
+    "invalid_password": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome8",
+        "definitions": {
+            "Welcome8": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome8"
+            }
+        }
+    },
+
+    "missing_username": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome5",
+        "definitions": {
+            "Welcome5": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome5"
+            }
+        }
+    },
+    "missing_password": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome4",
+        "definitions": {
+            "Welcome4": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome4"
             }
         }
     }
+
 }

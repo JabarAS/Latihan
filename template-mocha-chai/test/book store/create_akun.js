@@ -9,15 +9,16 @@ module.exports = function() {
 
     describe('Create Account', () => {
 
-        it('success user input username dan format password ', (done) => {
+        it('success create', (done) => {
             let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({
                     userName: 'string',
-                    password: 'Password1#'
+                    password: 'string'
                 })
                 .end(function(err, res) {
+                    console.log(res.body)
                     expect(res.statusCode).to.equal(201);
                     expect(res.body).to.be.jsonSchema(data.success);
                     done();

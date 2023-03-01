@@ -1,3 +1,3 @@
-require('../../test/book_store/create_akun')()
+require('../../test/book store/create_akun')()
 
 module.exports = function() {}
