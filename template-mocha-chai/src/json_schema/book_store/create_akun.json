@@ -28,6 +28,30 @@
             }
         }
     },
+    "user_exist": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome8",
+        "definitions": {
+            "Welcome8": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome8"
+            }
+        }
+    },
     "invalid_password": {
         "$schema": "http://json-schema.org/draft-06/schema#",
         "$ref": "#/definitions/Welcome8",

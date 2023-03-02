@@ -1,0 +1,89 @@
+{
+    "token": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome8",
+        "definitions": {
+            "Welcome8": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "token": {
+                        "type": "string"
+                    },
+                    "expires": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "expires",
+                    "result",
+                    "status",
+                    "token"
+                ],
+                "title": "Welcome8"
+            }
+        }
+    },
+    "fake_akun": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome6",
+        "definitions": {
+            "Welcome6": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "token": {
+                        "type": "null"
+                    },
+                    "expires": {
+                        "type": "null"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "expires",
+                    "result",
+                    "status",
+                    "token"
+                ],
+                "title": "Welcome6"
+            }
+        }
+    },
+    "missing_data": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome6",
+        "definitions": {
+            "Welcome6": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome6"
+            }
+        }
+    }
+}

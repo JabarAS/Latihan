@@ -14,8 +14,8 @@ module.exports = function() {
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({
-                    userName: 'string',
-                    password: 'string'
+                    userName: 'test123',
+                    password: 'JabarAS12#'
                 })
                 .end(function(err, res) {
                     console.log(res.body)
@@ -24,14 +24,71 @@ module.exports = function() {
                     done();
                 })
         })
+        it('user exist', (done) => {
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
+            api.post(`/user`)
+                .set("Content-type", "application/json")
+                .send({
+                    userName: 'test123',
+                    password: 'JabarAS12#'
+                })
+                .end(function(err, res) {
+                    console.log(res.body)
+                    expect(res.statusCode).to.equal(406);
+                    expect(res.body).to.be.jsonSchema(data.user_exist);
+                    done();
+                })
+        })
 
-        it('input invalid password', (done) => {
+        it('password <8 char', (done) => {
             let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({
                     userName: 'string',
-                    password: faker.password
+                    password: 'Passw1@'
+                })
+                .end(function(err, res) {
+                    expect(res.statusCode).to.equal(400);
+                    expect(res.body).to.be.jsonSchema(data.invalid_password);
+                    done();
+                })
+        })
+        it('password numeric', (done) => {
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
+            api.post(`/user`)
+                .set("Content-type", "application/json")
+                .send({
+                    userName: 'string23',
+                    password: '123213123123'
+                })
+                .end(function(err, res) {
+                    expect(res.statusCode).to.equal(400);
+                    expect(res.body).to.be.jsonSchema(data.invalid_password);
+                    done();
+                })
+        })
+        it('password semua huruf kecil', (done) => {
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
+            api.post(`/user`)
+                .set("Content-type", "application/json")
+                .send({
+                    userName: 'sdasdas',
+                    password: 'passwordddd'
+                })
+                .end(function(err, res) {
+                    expect(res.statusCode).to.equal(400);
+                    expect(res.body).to.be.jsonSchema(data.invalid_password);
+                    done();
+                })
+        })
+        it('pass special character', (done) => {
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
+            api.post(`/user`)
+                .set("Content-type", "application/json")
+                .send({
+                    userName: 'wewewew',
+                    password: '@@##$#$#$%%!@'
                 })
                 .end(function(err, res) {
                     expect(res.statusCode).to.equal(400);

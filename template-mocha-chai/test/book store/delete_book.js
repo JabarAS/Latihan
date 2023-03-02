@@ -1,5 +1,5 @@
 const chai = require('chai')
-const data = require('../../../src/json_schema/user/detail_user.json')
+const data = require('../../../src/json_schema/book_store/delete_book.json')
 const expect = require('chai').expect
 chai.use(require('chai-http'))
 chai.use(require('chai-json-schema'))

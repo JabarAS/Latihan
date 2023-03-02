@@ -1,0 +1,61 @@
+{
+    "success": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "type": "boolean",
+        "definitions": {}
+    },
+    "blm_generate": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "type": "boolean",
+        "definitions": {}
+    },
+    "fake_akun": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome8",
+        "definitions": {
+            "Welcome8": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome8"
+            }
+        }
+    },
+    "missing_data": {
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome5",
+        "definitions": {
+            "Welcome5": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome5"
+            }
+        }
+    }
+
+}
