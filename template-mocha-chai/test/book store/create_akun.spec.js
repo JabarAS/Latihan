@@ -14,7 +14,10 @@ module.exports = function() {
             api.post(`/user`)
                 .set("Content-type", "application/json")
                 .send({
-                    userName: 'test123',
+                    userName: faker.name.firstName(), //pakai akun yang udah pernah kedaftar
+                    //harus bikin username yang selalu baru, yang kalo setiap kali run dia bakal berubah valuenya
+                    // 1. kita bikin pake functionnya js
+                    // 2. kita pake faker
                     password: 'JabarAS12#'
                 })
                 .end(function(err, res) {
@@ -31,6 +34,7 @@ module.exports = function() {
                 .set("Content-type", "application/json")
                 .send({
                     userName: 'test123',
+                    // kita pake user yang udah pernah ke daftar, ini biasanya pake data yang udah disiapin
                     password: 'JabarAS12#'
                 })
                 .end(function(err, res) {

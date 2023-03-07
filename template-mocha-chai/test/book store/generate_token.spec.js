@@ -14,7 +14,7 @@ module.exports = function() {
             api.post(`/GenerateToken`)
                 .set("Content-type", "application/json")
                 .send({
-                    userName: 'test123',
+                    userName: 'test123', //kita udah punya data yang udah disiapin
                     password: 'JabarAS12#'
                 })
                 .end(function(err, res) {
