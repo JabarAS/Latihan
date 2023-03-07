@@ -1,6 +1,5 @@
-require('../../test/book store/create_akun.js')()
-require('../../test/book store/generate_token.js')()
-require('../../test/book store/authorized.js')()
+require('../../test/book store/get_book.js')()
+require('../../test/book store/delete_book.js')()
 
 
 module.exports = function() {}

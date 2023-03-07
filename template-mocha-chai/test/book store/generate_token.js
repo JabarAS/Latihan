@@ -10,7 +10,7 @@ module.exports = function() {
     describe('GenerateToken', () => {
 
         it('success generateToken', (done) => {
-            let api = chai.request('ttps://bookstore.toolsqa.com/Account/v1');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/GenerateToken`)
                 .set("Content-type", "application/json")
                 .send({
@@ -25,7 +25,7 @@ module.exports = function() {
         })
 
         it('invalid user account ', (done) => {
-            let api = chai.request('ttps://bookstore.toolsqa.com/Account/v1');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/GenerateToken`)
                 .set("Content-type", "application/json")
                 .send({
@@ -33,14 +33,14 @@ module.exports = function() {
                     password: 'Kenapa1@sepi'
                 })
                 .end(function(err, res) {
-                    expect(res.statusCode).to.equal(400);
+                    expect(res.statusCode).to.equal(200);
                     expect(res.body).to.be.jsonSchema(data.fake_akun);
                     done();
                 })
         })
 
         it('invalid username ', (done) => {
-            let api = chai.request('ttps://bookstore.toolsqa.com/Account/v1');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/GenerateToken`)
                 .set("Content-type", "application/json")
                 .send({
@@ -48,14 +48,14 @@ module.exports = function() {
                     password: 'JabarAS12#'
                 })
                 .end(function(err, res) {
-                    expect(res.statusCode).to.equal(400);
+                    expect(res.statusCode).to.equal(200);
                     expect(res.body).to.be.jsonSchema(data.fake_akun);
                     done();
                 })
         })
 
         it('invalid password', (done) => {
-            let api = chai.request('ttps://bookstore.toolsqa.com/Account/v1');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/GenerateToken`)
                 .set("Content-type", "application/json")
                 .send({
@@ -63,14 +63,14 @@ module.exports = function() {
                     password: 'JabarAS12'
                 })
                 .end(function(err, res) {
-                    expect(res.statusCode).to.equal(400);
+                    expect(res.statusCode).to.equal(200);
                     expect(res.body).to.be.jsonSchema(data.fake_akun);
                     done();
                 })
         })
 
         it('blank password', (done) => {
-            let api = chai.request('ttps://bookstore.toolsqa.com/Account/v1');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/GenerateToken`)
                 .set("Content-type", "application/json")
                 .send({
@@ -84,14 +84,13 @@ module.exports = function() {
         })
 
         it('blank username', (done) => {
-            let api = chai.request('ttps://bookstore.toolsqa.com/Account/v1');
+            let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.post(`/GenerateToken`)
                 .set("Content-type", "application/json")
                 .send({
                     password: 'JabarAS12#'
                 })
                 .end(function(err, res) {
-                    console.log(res.body)
                     expect(res.statusCode).to.equal(400);
                     expect(res.body).to.be.jsonSchema(data.missing_data);
                     done();

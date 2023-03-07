@@ -3,6 +3,27 @@
 
     },
     "not_found": {
-
+        "$schema": "http://json-schema.org/draft-06/schema#",
+        "$ref": "#/definitions/Welcome4",
+        "definitions": {
+            "Welcome4": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "format": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "title": "Welcome4"
+            }
+        }
     }
 }
