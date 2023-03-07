@@ -1,9 +1,9 @@
 {
     "get": {
         "$schema": "http://json-schema.org/draft-06/schema#",
-        "$ref": "#/definitions/Welcome9",
+        "$ref": "#/definitions/Welcome4",
         "definitions": {
-            "Welcome9": {
+            "Welcome4": {
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
@@ -24,15 +24,15 @@
                     "userId",
                     "username"
                 ],
-                "title": "Welcome9"
+                "title": "Welcome4"
             }
         }
     },
     "not_found": {
         "$schema": "http://json-schema.org/draft-06/schema#",
-        "$ref": "#/definitions/Welcome7",
+        "$ref": "#/definitions/Welcome6",
         "definitions": {
-            "Welcome7": {
+            "Welcome6": {
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
@@ -48,8 +48,9 @@
                     "code",
                     "message"
                 ],
-                "title": "Welcome7"
+                "title": "Welcome6"
             }
         }
     }
+
 }

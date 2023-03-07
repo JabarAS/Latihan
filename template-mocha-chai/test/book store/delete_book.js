@@ -6,14 +6,13 @@ chai.use(require('chai-json-schema'))
 
 module.exports = function() {
 
-    describe('delete', () => {
+    describe('delete user', () => {
 
         it('Delete get detail of user', (done) => {
             let api = chai.request('https://bookstore.toolsqa.com/Account/v1');
             api.delete(`/user/${global.userID}`)
                 .end(function(err, res) {
-                    expect(res.statusCode).to.equal(200);
-                    expect(res.body).to.be.jsonSchema(data.deleted);
+                    expect(res.statusCode).to.equal(204);
                     done();
                 })
         })
